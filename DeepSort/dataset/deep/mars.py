@@ -52,6 +52,7 @@ if __name__ == '__main__':
     # from dataset.deep.utils import visualize
 
     train_transforms = albumentations.Compose([
+        albumentations.Resize(64, 128),
         albumentations.Normalize(0, 1),
         albumentations.pytorch.ToTensorV2()
     ])
@@ -62,7 +63,3 @@ if __name__ == '__main__':
         print(sample['img'])
         print(sample['class'])
         break
-    #     print('image : ', sample['img'])
-    #     print('label : ', sample['class'])
-        # visualize(sample['img'], sample['label'])
-        # break
